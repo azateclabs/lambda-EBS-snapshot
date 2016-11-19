@@ -6,38 +6,7 @@ La funzione si preoccuperà di fare anche un ulteriore tagging per la retention,
 Per avere maggiori dettagli sull'implementazione fare riferimento al video:
 
 # IAM Policy
-Create una policy contenente le seguenti permissions associandolo, poi, ad un ruolo da usare per AWS Lambda
-
-{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Effect": "Allow",
-            "Action": [
-                "logs:*"
-            ],
-            "Resource": "arn:aws:logs:*:*:*"
-        },
-        {
-            "Effect": "Allow",
-            "Action": "ec2:Describe*",
-            "Resource": "*"
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "ec2:CreateSnapshot",
-                "ec2:DeleteSnapshot",
-                "ec2:CreateTags",
-                "ec2:ModifySnapshotAttribute",
-                "ec2:ResetSnapshotAttribute"
-            ],
-            "Resource": [
-                "*"
-            ]
-        }
-    ]
-}
+Create una policy contenente le permissions contenute nel file iam.policy associandolo, poi, ad un ruolo da usare per AWS Lambda
 
 # EBS Snapshots
 Implementare la funzione che effettua la snapshot automatica non ha alcun suggerimento. Una volta creata la funzione AWS Lambda, impostare come trigger una schedulazione Cron (rules) da impostare su Cloudwatch. Assicurarsi di aver taggato correttamente le istanze come indicato sopra. Per poter rientrare nella schedulazione basterà aver creato un tag relativo all'ambiente, selezionando in automatico quelle di produzione, o nel caso inserire un tag backup da valorizzare con yes. Effettuare sempre una prova della funzione.
