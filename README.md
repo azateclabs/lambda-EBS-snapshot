@@ -3,7 +3,7 @@ Questa funzione ha lo scopo di lanciare una snapshot su base giornaliera (o a sc
 
 La funzione si preoccuperà di fare anche un ulteriore tagging per la retention, verrà inserita una seconda funzione da schedulare con la stessa frequenza per la cancellazione delle snapshot al fine di non incrementare inutilmente il costo dell'infrastruttura su AWS.
 
-Per avere maggiori dettagli sull'implementazione fare riferimento al video:
+Per avere maggiori dettagli sull'implementazione fare riferimento al video: https://youtu.be/OXKZIckPjDg
 
 # IAM Policy
 Create una policy contenente le permissions contenute nel file iam.policy associandolo, poi, ad un ruolo da usare per AWS Lambda
