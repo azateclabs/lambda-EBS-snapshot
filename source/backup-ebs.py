@@ -45,7 +45,7 @@ def lambda_handler(event, context):
 
             to_tag[retention_days].append(snap['SnapshotId'])
 
-            print "La retention della snapshot %s del volume %s dall'istanza %s è %d giorni" % (
+            print "La retention della snapshot %s del volume %s dall'istanza %s e %d giorni" % (
                 snap['SnapshotId'],
                 vol_id,
                 instance['InstanceId'],
