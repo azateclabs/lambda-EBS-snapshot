@@ -56,7 +56,7 @@ def lambda_handler(event, context):
     for retention_days in to_tag.keys():
         delete_date = datetime.date.today() + datetime.timedelta(days=retention_days)
         delete_fmt = delete_date.strftime('%Y-%m-%d')
-        print "Cancellerà %d snapshots su %s" % (len(to_tag[retention_days]), delete_fmt)
+        print "Cancellera %d snapshots su %s" % (len(to_tag[retention_days]), delete_fmt)
         ec.create_tags(
             Resources=to_tag[retention_days],
             Tags=[
